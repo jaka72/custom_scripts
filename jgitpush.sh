@@ -20,7 +20,8 @@ else
 	commit_message=$1
 fi
 
-echo "Commit message: $commit_message"
+# echo "Commit message: $commit_message"
+echo ""
 
 # Check if the commit message is empty
 if [ -z "$commit_message" ]; then
