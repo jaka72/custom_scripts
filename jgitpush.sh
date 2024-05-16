@@ -15,9 +15,17 @@ fi
 
 if [ -z "$1" ]; then
 	echo "Enter commit message:"
-	read commit_messagae
+	read commit_message
 else
 	commit_message=$1
+fi
+
+echo "Commit message: $commit_message"
+
+# Check if the commit message is empty
+if [ -z "$commit_message" ]; then
+    echo "J: Aborting commit due to empty commit message."
+    exit 1
 fi
 
 

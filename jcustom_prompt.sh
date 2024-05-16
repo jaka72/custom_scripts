@@ -21,7 +21,7 @@ Cyan=$(color_code setaf 6)
 White=$(color_code setaf 7)
 
 # Function to truncate the current working directory to a maximum length
-function prompt_path() {
+function custom_prompt_path() {
   local full_path="$1"
   local max_length=15
   if [[ ${#full_path} -gt $max_length ]]; then
@@ -33,10 +33,10 @@ function prompt_path() {
 
 # Set the prompt dynamically
 #   SYMBOLS -->  %n username,  %m hostname,  %~ current working directory
-function set_prompt() {
-  local truncated_path=$(prompt_path "$PWD")
+function set_custom_prompt() {
+  local truncated_path=$(custom_prompt_path "$PWD")
   PROMPT="${Blue}%n${Yellow}:${Green}${truncated_path}${Yellow}$ ${Color_Off} "
 }
 
 # Register the precmd function to set the prompt before each prompt is displayed
-precmd_functions+=(set_prompt)
+precmd_functions+=(set_custom_prompt)
