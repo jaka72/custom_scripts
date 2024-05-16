@@ -35,7 +35,7 @@ function custom_prompt_path() {
 #   SYMBOLS -->  %n username,  %m hostname,  %~ current working directory
 function set_custom_prompt() {
   local truncated_path=$(custom_prompt_path "$PWD")
-  PROMPT="${Blue}%n${Yellow}:${Green}${truncated_path}${Yellow}$ ${Color_Off} "
+  PROMPT="${Blue}%n${Purple}:${Green}${truncated_path}${Purple}$ ${Color_Off} "
 }
 
 # Register the precmd function to set the prompt before each prompt is displayed
