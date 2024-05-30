@@ -25,7 +25,7 @@ function custom_prompt_path() {
   local full_path="$1"
   local max_length=15
   if [[ ${#full_path} -gt $max_length ]]; then
-    echo "...${full_path: -$max_length}"
+    echo "${full_path: -$max_length}"
   else
     echo "$full_path"
   fi
